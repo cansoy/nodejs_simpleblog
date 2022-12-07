@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./home.css">
+    <script defer src="./delete.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul class="home-navbar">
+        <li><%= username %> </li>
+        <li><%= usergender %> </li>
+        <li><a href="/logout"> Logout Blog</a></li>
+    </ul>
+    <% if (locals.dataSaveInformation) { %>
+        <p class="home-data-info"><%= dataSaveInformation %> </p>
+    <% } %>
+   
+    <div class="create-subject">
+        <form action="/blog/created" method="post">
+            Subject: <input type="text" name="blogSubject" id="blogSubject">
+            <br><br>
+            Commend: <textarea  name="blogTextarea" id="blogTextarea"></textarea>
+            <br><br>
+            <input type="submit" name="submitblog" id="submitblog">
+        </form>
+    </div>
+
+    <% if (locals.dbdata) { %>
+        <div class="find-data-list">
+                <% dbdata.forEach(item => { %>
+                    <ul>
+                        <li><%= item.blogSubject  %> </li>
+                        <li><%= item.blogTextarea %> </li>
+                        <li><%= item.blogWriter %> </li>
+                        <li><%= item.blogRegisterTime %> </li>
+                        <% if (item.blogWriter===username) { %>
+                            <form action="/blog/postdeleted" method="post">
+                                <li><button value="<%= item._id%>" name="homedatadelete" id="homedatadelete" type="submit" class="home-delete-me" data-id="<%= item._id%> ">Delete Me</button></li>
+                            </form>
+                        <% } %>
+                    </ul>
+                <% }) %>
+        </div>
+    <% } %>
+    
+</body>
+</html>

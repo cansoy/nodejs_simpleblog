@@ -1,0 +1,1 @@
+const btnDelete=document.querySelectorAll('.home-delete-me')

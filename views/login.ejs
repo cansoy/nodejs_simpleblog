@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./login.css">
+    <script defer src="./client.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <br><br>
+    <hr> 
+    <div class="login-container">
+        <br>
+            <% if (fillName) { %>
+                <p class="fill-name"><%= fillName %> </p>
+            <% } %>
+
+            <% if (selectGender) { %>
+                <p class="fill-name"><%= selectGender %> </p>
+            <% } %>
+        <br>
+        <form action="/home" method="post" autocomplete="off">
+            <div class="input">
+                Name: <input type="text" name="name" id="name">
+            </div>
+            <br>
+            <hr>
+            <div class="input">
+                Male: <input type="radio" name="gender" id="male" value="MALE">
+            </div>
+            <br>
+            <hr>
+            <div class="input">
+                Female: <input type="radio" name="gender" id="female" value="FEMALE">
+            </div>
+            <br>
+            <hr>
+            <div class="input">
+                <input type="submit" name="submit" id="submit">
+            </div>
+                
+            <hr>
+        </form>
+    </div>
+</body>
+</html>

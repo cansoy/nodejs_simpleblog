@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login-container{
+    width: 50%;
+    height: 50%;
+    background-color: cadetblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.input{
+    width: 20rem;
+    height: 2rem;
+}
+#name{
+    width: 400px;
+    height: 30px;
+}
+#submit{
+    width: 150px;
+    height: 30px;
+    cursor: pointer;
+}
+.fill-name{
+    background-color: brown;
+    color: aliceblue;
+    font-size: large;
+}
