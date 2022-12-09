@@ -13,6 +13,8 @@ const homeRouter=require('./routers/homeRouter')
 const logoutRouter=require('./routers/logoutRouter')
 const blogsRouter=require('./routers/blogsRouter')
 
+const PORT=process.env.PORT || 3000
+
 server.use(cors())
 server.use(helmet())
 server.use(express.json())
@@ -38,8 +40,7 @@ server.use('/blog',blogsRouter)
 server.use('/logout',logoutRouter)
 
 
-
-server.listen(3000,()=>{
+server.listen(PORT,()=>{
     console.log(`${server.get('env')}///////////////////////////////////////////////////////////////////////////////////`)
 })
 
