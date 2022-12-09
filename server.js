@@ -1,6 +1,6 @@
 const fs=require('fs')
 const path =require('path')
-require('dotenv').config({path:path.join(__dirname,'./bin/.env')})
+// require('dotenv').config({path:path.join(__dirname,'./bin/.env')})
 const express=require('express')
 const server=express()
 const cors=require('cors')
